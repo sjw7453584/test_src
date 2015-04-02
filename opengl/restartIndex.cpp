@@ -1,6 +1,5 @@
+#define GL_GLEXT_PROTOTYPES
 #include <GL/gl.h>
-#include <GL/glext.h>
-#include <GL/glu.h>
 #include <GL/freeglut.h>
 #include <cstdio>
 #define BUFFER_OFFSET(offset) ((GLvoid *) NULL + offset)
@@ -25,7 +24,7 @@ void init()
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
     glBufferData(GL_ARRAY_BUFFER, 2*NumPoints*sizeof(GLfloat),
                  NULL, GL_STATIC_DRAW);
-    vertices = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+    vertices = (GLfloat*)glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
     if (vertices == NULL) {
         fprintf(stderr, "Unable to map vertex buffer\n");
         exit(EXIT_FAILURE);
@@ -57,8 +56,7 @@ void init()
     glBufferData( GL_ELEMENT_ARRAY_BUFFER,
                   NumStrips*(NumPointsPerStrip+1)*sizeof(GLushort),
                   NULL, GL_STATIC_DRAW );
-    indices = glMapBuffer(GL_ELEMENT_ARRAY_BUFFER,
-                          GL_WRITE_ONLY);
+    indices = (GLushort*)glMapBuffer(GL_ELEMENT_ARRAY_BUFFER,GL_WRITE_ONLY);
     if (indices == NULL) {
         fprintf(stderr, "Unable to map index buffer\n");
         exit(EXIT_FAILURE);
