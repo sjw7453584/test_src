@@ -7,10 +7,10 @@
 #define XEnd     0.8
 #define YStart   -0.8
 #define YEnd     0.8
-#define NumXPoints 11
-#define NumYPoints 11
+#define NumXPoints 6
+#define NumYPoints 6
 #define NumPoints (NumXPoints * NumYPoints)
-#define NumPointsPerStrip (2*NumXPoints)
+#define NumPointsPerStrip (NumXPoints)
 #define NumStrips (NumYPoints-1)
 #define RestartIndex 0xffff
 
@@ -54,7 +54,7 @@ void init()
     **
     the element-array loop logic */
     glBufferData( GL_ELEMENT_ARRAY_BUFFER,
-                  NumStrips*(NumPointsPerStrip+1)*sizeof(GLushort),
+                  NumStrips*(NumPointsPerStrip + 1)*sizeof(GLushort),
                   NULL, GL_STATIC_DRAW );
     indices = (GLushort*)glMapBuffer(GL_ELEMENT_ARRAY_BUFFER,GL_WRITE_ONLY);
     if (indices == NULL) {
@@ -80,12 +80,18 @@ void init()
 }
 void display()
 {
+    gluOrtho2D(-1.0, 1.0, -1.0, 1.0);
     int i, start;
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glColor3f(1, 1, 1);
+    glColor3f(1, 1, 0);
     glDrawElements(GL_TRIANGLE_STRIP,
-                   NumStrips*(NumPointsPerStrip + 1),
+                   NumStrips*(NumPointsPerStrip + 1 ),
                    GL_UNSIGNED_SHORT, BUFFER_OFFSET(0));
+
+    
+    // glDrawElements(GL_TRIANGLE_STRIP,
+    //                3,
+    //                GL_UNSIGNED_SHORT, BUFFER_OFFSET(0));
     glutSwapBuffers();
 }
  

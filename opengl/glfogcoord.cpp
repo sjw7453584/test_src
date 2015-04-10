@@ -33,6 +33,7 @@ glVertex3f(-2.0f, 0.0f, -5.0f);
 glFogCoordf(f3);
 glVertex3f(0.0f, 2.0f, -10.0f);
 glEnd();
+ glFlush();
 }
  void keyboard(unsigned char key, int x, int y)
 {
