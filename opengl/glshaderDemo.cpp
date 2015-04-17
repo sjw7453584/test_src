@@ -1,10 +1,9 @@
 
-    #include "GL\glew.h"  
-    #include "GL\glut.h"  
-    #include <gl\GL.h>  
-    #include <gl\GLU.h>  
+    #include <GL/glew.h>
+    #include <GL/glut.h>  
+    #include <GL/gl.h>  
+    #include <GL/glu.h>  
      
-    #include <Windows.h>  
     #include <stdio.h>  
      
     GLuint program; 
