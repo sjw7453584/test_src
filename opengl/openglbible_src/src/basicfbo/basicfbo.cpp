@@ -39,7 +39,7 @@ class basicfbo_app : public sb6::application
     {
         static const char * vs_source[] =
         {
-            "#version 410 core                                                  \n"
+            "#version 130                                                       \n"
             "                                                                   \n"
             "layout (location = 0) in vec4 position;                            \n"
             "layout (location = 1) in vec2 texcoord;                            \n"
@@ -63,7 +63,7 @@ class basicfbo_app : public sb6::application
 
         static const char * fs_source1[] =
         {
-            "#version 410 core                                                              \n"
+            "#version 130                                                                   \n"
             "                                                                               \n"
             "in VS_OUT                                                                      \n"
             "{                                                                              \n"
@@ -81,7 +81,7 @@ class basicfbo_app : public sb6::application
 
         static const char * fs_source2[] =
         {
-            "#version 420 core                                                              \n"
+            "#version 130                                                                   \n"
             "                                                                               \n"
             "uniform sampler2D tex;                                                         \n"
             "                                                                               \n"

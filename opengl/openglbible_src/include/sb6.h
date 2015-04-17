@@ -100,10 +100,10 @@ public:
 #ifdef _DEBUG
         glfwOpenWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GL_TRUE);
 #endif /* _DEBUG */
-        glfwOpenWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-        glfwOpenWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-        glfwOpenWindowHint(GLFW_FSAA_SAMPLES, info.samples);
-        glfwOpenWindowHint(GLFW_STEREO, info.flags.stereo ? GL_TRUE : GL_FALSE);
+        /* glfwOpenWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); */
+        /* glfwOpenWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); */
+        /* glfwOpenWindowHint(GLFW_FSAA_SAMPLES, info.samples); */
+        /* glfwOpenWindowHint(GLFW_STEREO, info.flags.stereo ? GL_TRUE : GL_FALSE); */
         if (info.flags.fullscreen)
         {
             if (info.windowWidth == 0 || info.windowHeight == 0)
@@ -145,7 +145,7 @@ public:
 
         if (info.flags.debug)
         {
-            if (gl3wIsSupported(4, 3))
+            if (gl3wIsSupported(3, 2))
             {
                 glDebugMessageCallback(debug_callback, this);
                 glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
@@ -183,7 +183,7 @@ public:
         info.majorVersion = 3;
         info.minorVersion = 2;
 #else
-        info.majorVersion = 4;
+        info.majorVersion = 1;
         info.minorVersion = 3;
 #endif
         info.samples = 0;

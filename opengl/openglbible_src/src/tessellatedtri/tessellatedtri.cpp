@@ -38,7 +38,7 @@ class tessellatedtri_app : public sb6::application
     {
         static const char * vs_source[] =
         {
-            "#version 410 core                                                 \n"
+            "#version 130                                                      \n"
             "                                                                  \n"
             "void main(void)                                                   \n"
             "{                                                                 \n"
@@ -52,7 +52,7 @@ class tessellatedtri_app : public sb6::application
 
         static const char * tcs_source[] =
         {
-            "#version 410 core                                                                 \n"
+            "#version 130                                                                      \n"
             "                                                                                  \n"
             "layout (vertices = 3) out;                                                        \n"
             "                                                                                  \n"
@@ -71,7 +71,7 @@ class tessellatedtri_app : public sb6::application
 
         static const char * tes_source[] =
         {
-            "#version 410 core                                                                 \n"
+            "#version 130                                                                      \n"
             "                                                                                  \n"
             "layout (triangles, equal_spacing, cw) in;                                         \n"
             "                                                                                  \n"
@@ -85,7 +85,7 @@ class tessellatedtri_app : public sb6::application
 
         static const char * fs_source[] =
         {
-            "#version 410 core                                                 \n"
+            "#version 130                                                      \n"
             "                                                                  \n"
             "out vec4 color;                                                   \n"
             "                                                                  \n"

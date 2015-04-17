@@ -48,7 +48,7 @@ public:
     {
         static const char * vs_source[] =
         {
-            "#version 410 core                                                                  \n"
+            "#version 130                                                                       \n"
             "                                                                                   \n"
             "out VS_OUT                                                                         \n"
             "{                                                                                  \n"
@@ -74,7 +74,7 @@ public:
 
         static const char * fs_source[] =
         {
-            "#version 410 core                                                 \n"
+            "#version 130                                                      \n"
             "                                                                  \n"
             "out vec4 color;                                                   \n"
             "                                                                  \n"

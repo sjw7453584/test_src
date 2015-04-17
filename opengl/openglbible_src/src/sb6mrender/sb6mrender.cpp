@@ -53,7 +53,7 @@ protected:
         /*
         static const char * vs_source[] =
         {
-            "#version 420 core                                                  \n"
+            "#version 130                                                       \n"
             "                                                                   \n"
             "layout (location = 0) in vec4 position;                            \n"
             "layout (location = 1) in vec3 normal;                              \n"
@@ -83,7 +83,7 @@ protected:
 
         static const char * fs_source[] =
         {
-            "#version 420 core                                                  \n"
+            "#version 130                                                       \n"
             "                                                                   \n"
             "out vec4 color;                                                    \n"
             "                                                                   \n"

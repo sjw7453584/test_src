@@ -82,7 +82,7 @@ class programinfo_app : public sb6::application
     {
         static const char * vs_source[] =
         {
-            "#version 420 core                                                  \n"
+            "#version 130                                                       \n"
             "                                                                   \n"
             "in vec4 position;                                                  \n"
             "                                                                   \n"
@@ -103,7 +103,7 @@ class programinfo_app : public sb6::application
 
         static const char * fs_source[] =
         {
-            "#version 420 core                                                  \n"
+            "#version 130                                                       \n"
             "                                                                   \n"
             "out vec4 color;                                                    \n"
             "layout (location = 2) out ivec2 data;                              \n"

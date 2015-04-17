@@ -42,7 +42,7 @@ static void print_shader_log(GLuint shader)
 
 static const char * vs_source[] =
 {
-    "#version 420 core                                                              \n"
+    "#version 130                                                                   \n"
     "                                                                               \n"
     "void main(void)                                                                \n"
     "{                                                                              \n"
@@ -57,7 +57,7 @@ static const char * vs_source[] =
 
 static const char * fs_source[] =
 {
-    "#version 430 core                                                              \n"
+    "#version 130                                                                   \n"
     "                                                                               \n"
     "uniform sampler2D s;                                                           \n"
     "                                                                               \n"

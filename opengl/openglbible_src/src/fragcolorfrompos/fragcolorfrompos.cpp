@@ -42,7 +42,7 @@ class colorfromposition_app : public sb6::application
 #ifndef INTERPOLATE_COLOR
         static const char * vs_source[] =
         {
-            "#version 420 core                                                          \n"
+            "#version 130                                                               \n"
             "                                                                           \n"
             "void main(void)                                                            \n"
             "{                                                                          \n"
@@ -56,7 +56,7 @@ class colorfromposition_app : public sb6::application
 
         static const char * fs_source[] =
         {
-            "#version 420 core                                                          \n"
+            "#version 130                                                               \n"
             "                                                                           \n"
             "out vec4 color;                                                            \n"
             "                                                                           \n"
@@ -71,7 +71,7 @@ class colorfromposition_app : public sb6::application
 #else
         static const char * vs_source[] =
         {
-            "#version 420 core                                                          \n"
+            "#version 130                                                               \n"
             "                                                                           \n"
             "out vec4 vs_color; \n"
             "void main(void)                                                            \n"
@@ -90,7 +90,7 @@ class colorfromposition_app : public sb6::application
 
         static const char * fs_source[] =
         {
-            "#version 420 core                                                          \n"
+            "#version 130                                                               \n"
             "                                                                           \n"
             "in vec4 vs_color;                                                          \n"
             "out vec4 color;                                                            \n"
