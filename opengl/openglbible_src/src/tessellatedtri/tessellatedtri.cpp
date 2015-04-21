@@ -38,7 +38,7 @@ class tessellatedtri_app : public sb6::application
     {
         static const char * vs_source[] =
         {
-            "#version 130                                                      \n"
+            "#version 120                                                      \n"
             "                                                                  \n"
             "void main(void)                                                   \n"
             "{                                                                 \n"
@@ -52,7 +52,7 @@ class tessellatedtri_app : public sb6::application
 
         static const char * tcs_source[] =
         {
-            "#version 130                                                                      \n"
+            "#version 120                                                                      \n"
             "                                                                                  \n"
             "layout (vertices = 3) out;                                                        \n"
             "                                                                                  \n"
@@ -71,7 +71,7 @@ class tessellatedtri_app : public sb6::application
 
         static const char * tes_source[] =
         {
-            "#version 130                                                                      \n"
+            "#version 120                                                                      \n"
             "                                                                                  \n"
             "layout (triangles, equal_spacing, cw) in;                                         \n"
             "                                                                                  \n"
@@ -85,7 +85,7 @@ class tessellatedtri_app : public sb6::application
 
         static const char * fs_source[] =
         {
-            "#version 130                                                      \n"
+            "#version 120                                                      \n"
             "                                                                  \n"
             "out vec4 color;                                                   \n"
             "                                                                  \n"
@@ -99,18 +99,22 @@ class tessellatedtri_app : public sb6::application
         GLuint vs = glCreateShader(GL_VERTEX_SHADER);
         glShaderSource(vs, 1, vs_source, NULL);
         glCompileShader(vs);
+        print_log(vs);
 
         GLuint tcs = glCreateShader(GL_TESS_CONTROL_SHADER);
         glShaderSource(tcs, 1, tcs_source, NULL);
         glCompileShader(tcs);
+        print_log(tcs);
 
         GLuint tes = glCreateShader(GL_TESS_EVALUATION_SHADER);
         glShaderSource(tes, 1, tes_source, NULL);
         glCompileShader(tes);
+        print_log(tes);
 
         GLuint fs = glCreateShader(GL_FRAGMENT_SHADER);
         glShaderSource(fs, 1, fs_source, NULL);
         glCompileShader(fs);
+        print_log(fs);
 
         glAttachShader(program, vs);
         glAttachShader(program, tcs);

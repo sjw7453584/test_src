@@ -72,7 +72,7 @@
 
 #include <stdio.h>
 #include <string.h>
-
+#include <cstdlib>
 namespace sb6
 {
 
@@ -324,6 +324,9 @@ protected:
 };
 
 };
+
+
+void print_log(GLuint object) ;
 
 #if defined _WIN32
 #define DECLARE_MAIN(a)                             \

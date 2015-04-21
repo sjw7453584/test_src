@@ -24,7 +24,6 @@
  */
 
 #include "sb6.h"
-
 sb6::application * sb6::application::app = 0;
 
 #include <GL/glext.h>
@@ -54,3 +53,25 @@ int sb6IsExtensionSupported(const char * extname)
 
     return 0;
 }
+void print_log(GLuint object) 
+{ 
+    GLint log_length = 0; 
+    if (glIsShader(object)) 
+        glGetShaderiv(object, GL_INFO_LOG_LENGTH, &log_length); 
+    else if (glIsProgram(object)) 
+        glGetProgramiv(object, GL_INFO_LOG_LENGTH, &log_length); 
+    else { 
+        fprintf(stderr, "printlog: Not a shader or a program\n"); 
+        return; 
+    } 
+       
+    char* log = (char*)malloc(log_length); 
+       
+    if (glIsShader(object)) 
+        glGetShaderInfoLog(object, log_length, NULL, log); 
+    else if (glIsProgram(object)) 
+        glGetProgramInfoLog(object, log_length, NULL, log); 
+       
+    fprintf(stderr, "%s", log); 
+    free(log); 
+} 
