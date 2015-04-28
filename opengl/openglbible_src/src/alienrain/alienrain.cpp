@@ -61,7 +61,7 @@ class alienrain_app : public sb6::application
 
         static const char * vs_source[] =
         {
-            "#version 130                                                           \n"
+            "#version 430 core                                                           \n"
             "                                                                       \n"
             "layout (location = 0) in int alien_index;                              \n"
             "                                                                       \n"
@@ -105,7 +105,7 @@ class alienrain_app : public sb6::application
 
         static const char * fs_source[] =
         {
-            "#version 130                                                           \n"
+            "#version 430 core                                                           \n"
             "                                                                       \n"
             "layout (location = 0) out vec4 color;                                  \n"
             "                                                                       \n"

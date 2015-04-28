@@ -49,7 +49,7 @@ public:
     {
         static const char * vs_source[] =
         {
-            "#version 130                                                       \n"
+            "#version 430 core                                                       \n"
             "                                                                   \n"
             "in vec4 position;                                                  \n"
             "                                                                   \n"
@@ -68,7 +68,7 @@ public:
 #if 0
         static const char * tcs_source[] =
         {
-            "#version 130                                                                      \n"
+            "#version 430 core                                                                      \n"
             "                                                                                  \n"
             "layout (vertices = 4) out;                                                        \n"
             "                                                                                  \n"
@@ -95,7 +95,7 @@ public:
 
         static const char * tcs_source[] =
         {
-            "#version 130                                                                      \n"
+            "#version 430 core                                                                      \n"
             "                                                                                  \n"
             "layout (vertices = 4) out;                                                        \n"
             "                                                                                  \n"
@@ -149,7 +149,7 @@ public:
 
         static const char * tes_source[] =
         {
-            "#version 130                                                                      \n"
+            "#version 430 core                                                                      \n"
             "                                                                                  \n"
             "layout (quads, fractional_odd_spacing, ccw) in;                                   \n"
             "                                                                                  \n"
@@ -171,7 +171,7 @@ public:
 
         static const char * fs_source[] =
         {
-            "#version 130                                                       \n"
+            "#version 430 core                                                       \n"
             "                                                                   \n"
             "out vec4 color;                                                    \n"
             "                                                                   \n"

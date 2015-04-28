@@ -26,7 +26,7 @@
 
 static const char * square_vs_source[] =
 {
-    "#version 130                                                                    \n"
+    "#version 430 core                                                                    \n"
     "                                                                                \n"
     "layout (location = 0) in vec4 position;                                         \n"
     "layout (location = 1) in vec4 instance_color;                                   \n"
@@ -46,7 +46,7 @@ static const char * square_vs_source[] =
 
 static const char * square_fs_source[] =
 {
-    "#version 130                                                                     \n"
+    "#version 430 core                                                                     \n"
     "precision highp float;                                                           \n"
     "                                                                                 \n"
     "in Fragment                                                                      \n"

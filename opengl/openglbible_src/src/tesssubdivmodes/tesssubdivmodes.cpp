@@ -46,7 +46,7 @@ public:
     {
         static const char * vs_source[] =
         {
-            "#version 130                                                      \n"
+            "#version 430 core                                                      \n"
             "                                                                  \n"
             "void main(void)                                                   \n"
             "{                                                                 \n"
@@ -61,7 +61,7 @@ public:
 
         static const char * tcs_source_triangles[] =
         {
-            "#version 130                                                                      \n"
+            "#version 430 core                                                                      \n"
             "                                                                                  \n"
             "layout (vertices = 3) out;                                                        \n"
             "                                                                                  \n"
@@ -82,7 +82,7 @@ public:
 
         static const char * tes_source_equal[] =
         {
-            "#version 130                                                                      \n"
+            "#version 430 core                                                                      \n"
             "                                                                                  \n"
             "layout (triangles) in;                                                            \n"
             "                                                                                  \n"
@@ -96,7 +96,7 @@ public:
 
         static const char * tes_source_fract_even[] =
         {
-            "#version 130                                                                      \n"
+            "#version 430 core                                                                      \n"
             "                                                                                  \n"
             "layout (triangles, fractional_even_spacing) in;                                   \n"
             "                                                                                  \n"
@@ -110,7 +110,7 @@ public:
 
         static const char * tes_source_fract_odd[] =
         {
-            "#version 130                                                                      \n"
+            "#version 430 core                                                                      \n"
             "                                                                                  \n"
             "layout (triangles, fractional_odd_spacing) in;                                    \n"
             "                                                                                  \n"
@@ -124,7 +124,7 @@ public:
 
         static const char * fs_source[] =
         {
-            "#version 130                                                       \n"
+            "#version 430 core                                                       \n"
             "                                                                   \n"
             "out vec4 color;                                                    \n"
             "                                                                   \n"
