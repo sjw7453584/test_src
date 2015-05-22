@@ -12,7 +12,7 @@ typedef struct msg_block1
 typedef struct msg_block2
 {
     int len;
-    char data[];//后面hash_id跟data的地址相同，所以一般要放到最后。
+    char data[];//后面hash_id跟data的地址相同，所以一般要放到最后。若要对data赋值，必须在定义下一个变量之前。
     int hash_id;
     
 } __attribute__((packed)) msg_block_t2;
@@ -35,11 +35,14 @@ int main()
     msg1.hash_id = 1;
     printf("member address of msg_block_t1:len:%p  data:%p  hash_id%p",&msg1.len, &msg1.data, &msg1.hash_id);
     msg_block_t2 msg2; 
-    static char msg_buf[1024 * 150] = {0};
-    msg_block_t2 * pmsg2 = (msg_block_t2 *)msg_buf;
     msg2.len = 7 + sizeof(msg_block_t2);
+    
     msg2.hash_id = 1;
-    memcpy(msg2.data,"aaaaaa",7);
+
+    memcpy(msg2.data,"aaaaaa",7);//如果放在msg_buf定义之后,会导致segment fault.
+static char msg_buf[1024 * 150] = {0};
+    msg_block_t2 * pmsg2 = (msg_block_t2 *)msg_buf;
+
     memcpy(pmsg2->data,"aaaaaa",7);
     pmsg2->hash_id =2;
     pmsg2->len = 1;
